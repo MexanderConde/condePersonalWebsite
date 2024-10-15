@@ -1,0 +1,58 @@
+#hangin {
+    margin: 81px;
+    z-index: -999!important;
+
+}
+
+#hanginTaas {
+    background-color: #001d52;
+    padding-top: 25vh;
+}
+
+#malakingHangin {
+    background-color: #001d52;
+    padding: 5vh;
+}
+
+#carouselExample {
+    width: 100%;
+    margin: auto; 
+}
+
+.carousel {
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+}
+
+.carousel-inner img {
+    opacity: 0.5;
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 95%;
+    height: 80%;
+    border-radius: 25px;
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}

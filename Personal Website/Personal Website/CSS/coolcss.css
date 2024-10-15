@@ -1,0 +1,59 @@
+.autoShow0 {
+    animation: autoShowAnimation0;
+    animation-timeline: view(50% auto);
+}
+.autoShow1 {
+    animation: autoShowAnimation1;
+    animation-timeline: view(50% auto);
+}
+@keyframes autoShowAnimation0 {
+    from {
+        opacity: 0;
+        transform: translateY(300px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes autoShowAnimation1 {
+    from {
+        opacity: 0;
+        transform: translateX(800px) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0) scale(1);
+    }
+}
+
+.autoShow2 {
+    animation: autoShowAnimation2;
+    animation-timeline: view(50% auto);
+}
+.autoShow3 {
+    animation: autoShowAnimation3;
+    animation-timeline: view(50% auto);
+}
+@keyframes autoShowAnimation2 {
+    from {
+        opacity: 0;
+        transform: translateY(300px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes autoShowAnimation3 {
+    from {
+        opacity: 0;
+        transform: translateX(-800px) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translatex(0) scale(1);
+    }
+}

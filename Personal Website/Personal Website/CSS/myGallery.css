@@ -1,0 +1,839 @@
+body {
+    background-color: #0b54db;
+}
+
+#hati {
+    padding: 1vh;
+    background-color: #000000 ;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    transition: background 0.5s ease, background-color 0.5s, opacity 0.5s;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1600px) rotateY(360deg);
+    }
+
+    to {
+        transform: perspective(1600px) rotateY(0deg);
+    }
+}
+
+.below {
+    position: absolute;
+    z-index: -999 !important;
+}
+
+.above {
+    z-index: 1000 !important;
+}
+
+.banner .slider .item {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner .slider .item img {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: black solid 2px;
+    border-radius: 10px;
+    filter: brightness(0.75);
+}
+
+.banner .slider .item img:hover {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+}
+
+.banner .slider .item img.hovered {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+    opacity: 1;
+}
+
+.dummy {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.slider.hovered {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+}
+
+.slider.nospin {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+    transform: none !important;
+}
+
+.item.paused {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transform: none !important;
+    animation-play-state: pause !important;
+}
+
+.item {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.slider.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    top: 25%;
+    left: 5%;
+}
+
+.item img.size {
+    width: 150% !important;
+    height: 150% !important;
+}
+
+.dropleft {
+    padding: 1vw;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transition: 1.5 ease-in;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    top: 35vh;
+    left: 3000px;
+    z-index: 999;
+    position: absolute;
+    background-color: #001741;
+    color: white;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.dropleft h1 {
+    font-size: 2vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+}
+
+.dropleft.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    left: 35% !important;
+}
+
+.myFriends {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 25%;
+    top: 7vw; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    color: white;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.myFriends h1 {
+    font-size: 5vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.banner0 {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    transition: background 0.5s ease, background-color 0.5s, opacity 0.5s;
+}
+
+.banner0 .slider0 {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+@keyframes autoRun0 {
+    from {
+        transform: perspective(1600px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1600px) rotateY(360deg);
+    }
+}
+
+.below {
+    position: absolute;
+    z-index: -999 !important;
+}
+
+.above {
+    z-index: 1000 !important;
+}
+
+.banner0 .slider0 .item0 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner0 .slider0 .item0 img {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: black solid 2px;
+    border-radius: 10px;
+    filter: brightness(0.75);
+}
+
+.banner0 .slider0 .item0 img:hover {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+}
+
+.banner0 .slider0 .item0 img.hovered {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+    opacity: 1;
+}
+
+.slider0.hovered {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+}
+
+.slider0.nospin {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+    transform: none !important;
+}
+
+.item0.paused {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transform: none !important;
+    animation-play-state: pause !important;
+}
+
+.item0 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.slider0.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    top: 25%;
+    left: 5%;
+}
+
+.item0 img.size {
+    width: 150% !important;
+    height: 150% !important;
+}
+
+.dropleft0 {
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transition: 1.5 ease-in;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    top: 35vh;
+    left: 3000px;
+    z-index: 999;
+    position: absolute;
+    background-color: #001741;
+    color: white;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.dropleft0 h1 {
+    font-size: 2vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+}
+
+.dropleft0.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    left: 35% !important;
+}
+
+.dummy0 {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.myFamily {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 25%;
+    top: 7vw; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    color: white;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.myFamily h1 {
+    font-size: 5vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.banner1 {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    transition: background 0.5s ease, background-color 0.5s, opacity 0.5s;
+}
+
+.banner1 .slider1 {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun0 20s linear infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.below {
+    position: absolute;
+    z-index: -999 !important;
+}
+
+.above {
+    z-index: 1000 !important;
+}
+
+.banner1 .slider1 .item1 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner1 .slider1 .item1 img {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: black solid 2px;
+    border-radius: 10px;
+    filter: brightness(0.75);
+}
+
+.banner1 .slider1 .item1 img:hover {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+}
+
+.banner1 .slider1 .item1 img.hovered {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+    opacity: 1;
+}
+
+.slider1.hovered {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+}
+
+.slider1.nospin {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+    transform: none !important;
+}
+
+.item1.paused {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transform: none !important;
+    animation-play-state: pause !important;
+}
+
+.item1 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.slider1.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    top: 25%;
+    left: 5%;
+}
+
+.item1 img.size {
+    width: 150% !important;
+    height: 150% !important;
+}
+
+.dropleft1 {
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transition: 1.5 ease-in;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    top: 35vh;
+    left: 3000px;
+    z-index: 999;
+    position: absolute;
+    background-color: #001741;
+    color: white;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.dropleft1 h1 {
+    font-size: 2vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+}
+
+.dropleft1.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    left: 35% !important;
+}
+
+.dummy1 {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.myPets {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 25%;
+    top: 7vw; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    color: white;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.myPets h1 {
+    font-size: 5vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.banner2 {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    transition: background 0.5s ease, background-color 0.5s, opacity 0.5s;
+}
+
+.banner2 .slider2 {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun0 20s linear infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+@keyframes autoRun0 {
+    from {
+        transform: perspective(1600px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1600px) rotateY(360deg);
+    }
+}
+
+.below {
+    position: absolute;
+    z-index: -999 !important;
+}
+
+.above {
+    z-index: 1000 !important;
+}
+
+.banner2 .slider2 .item2 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner2 .slider2 .item2 img {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: black solid 2px;
+    border-radius: 10px;
+    filter: brightness(0.75);
+}
+
+.banner2 .slider2 .item2 img:hover {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+}
+
+.banner2 .slider2 .item2 img.hovered {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+    opacity: 1;
+}
+
+.slider2.hovered {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+}
+
+.slider2.nospin {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+    transform: none !important;
+}
+
+.item2.paused {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transform: none !important;
+    animation-play-state: pause !important;
+}
+
+.item2 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.slider2.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    top: 25%;
+    left: 5%;
+}
+
+.item2 img.size {
+    width: 150% !important;
+    height: 150% !important;
+}
+
+.dropleft2 {
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transition: 1.5 ease-in;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    top: 35vh;
+    left: 3000px;
+    z-index: 999;
+    position: absolute;
+    background-color: #001741;
+    color: white;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.dropleft2 h1 {
+    font-size: 2vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+}
+
+.dropleft2.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    left: 35% !important;
+}
+
+.dummy2 {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.mySelf {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 25%;
+    top: 7vw; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    color: white;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.mySelf h1 {
+    font-size: 5vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.banner3 {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    transition: background 0.5s ease, background-color 0.5s, opacity 0.5s;
+}
+
+.banner3 .slider3 {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun0 20s linear infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.below {
+    position: absolute;
+    z-index: -999 !important;
+}
+
+.above {
+    z-index: 1000 !important;
+}
+
+.banner3 .slider3 .item3 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner3 .slider3 .item3 img {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: black solid 2px;
+    border-radius: 10px;
+    filter: brightness(0.75);
+}
+
+.banner3 .slider3 .item3 img:hover {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+}
+
+.banner3 .slider3 .item3 img.hovered {
+    filter: drop-shadow(0 0 15px rgb(0, 255, 42));
+    border: rgb(0, 255, 42) solid 1px !important;
+    opacity: 1;
+}
+
+.slider3.hovered {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+}
+
+.slider3.nospin {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    animation-play-state: paused !important;
+    transform: none !important;
+}
+
+.item3.paused {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transform: none !important;
+    animation-play-state: pause !important;
+}
+
+.item3 {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.slider3.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    top: 25%;
+    left: 5%;
+}
+
+.item3 img.size {
+    width: 150% !important;
+    height: 150% !important;
+}
+
+.dropleft3 {
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    transition: 1.5 ease-in;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    top: 35vh;
+    left: 3000px;
+    z-index: 999;
+    position: absolute;
+    background-color: #001741;
+    color: white;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+.dropleft3 h1 {
+    font-size: 2vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+}
+
+.dropleft3.left {
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    left: 35% !important;
+}
+
+.dummy3 {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+}
+
+.myPartner {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease, left 0.5s, animation 0.5s, width 0.5s, height 0.5s, top 0.5s;
+    width: 25%;
+    top: 7vw; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    position: absolute;
+    color: white;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.myPartner h1 {
+    font-size: 5vh !important;
+    max-width: 100%;
+    hyphens: auto;
+    word-wrap: break-word;
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
